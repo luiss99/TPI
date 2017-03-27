@@ -12,10 +12,10 @@ import javax.persistence.PersistenceContext;
 
 /**
  *
- * @author Kira Luis
+ * @author Juank
  */
 @Stateless
-public class TipoPasoFacade extends AbstractFacade<TipoPaso> implements TipoPasoFacadeLocal {
+public class TipoPasoFacade extends AbstractFacade<TipoPaso> {
 
     @PersistenceContext(unitName = "PU")
     private EntityManager em;

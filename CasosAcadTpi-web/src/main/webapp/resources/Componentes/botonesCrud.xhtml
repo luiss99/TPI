@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:composite="http://java.sun.com/jsf/composite"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <composite:interface>
+            <composite:attribute name="value" required="false"/>
+        </composite:interface>
+        
+         
+        <composite:implementation>  
+            <c:if test="#{cc.attrs.value == 'botonesTR'}"> 
+            <h:commandButton action="#{tipoRequisitoController.prepareView}" value="#{bundle.ListTipoRequisitoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandButton action="#{tipoRequisitoController.prepareEdit}" value="#{bundle.ListTipoRequisitoEditLink}"/>
+                            <h:outputText value=" "/>
+                           <h:commandButton action="#{tipoRequisitoController.destroy}" value="#{bundle.ListTipoRequisitoDestroyLink}"/>
+                            <h:outputText value=" "/>
+                             </c:if>
+             <c:if test="#{cc.attrs.value == 'botonesTP'}"> 
+                  <h:commandButton action="#{tipoPasoController.prepareView}" value="#{bundle.ListTipoPasoViewLink}"/>
+                          <h:outputText value=" "/>
+                            <h:commandButton action="#{tipoPasoController.prepareEdit}" value="#{bundle.ListTipoPasoEditLink}"/>
+                            <h:outputText value=" "/>
+                           <h:commandButton action="#{tipoPasoController.destroy}" value="#{bundle.ListTipoPasoDestroyLink}"/>
+                          <h:outputText value=" "/>
+                            </c:if>
+        </composite:implementation>
+   
+    </body>
+</html>
