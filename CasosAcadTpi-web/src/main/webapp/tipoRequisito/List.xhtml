@@ -16,7 +16,7 @@
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
                 <h:outputText escape="false" value="#{bundle.ListTipoRequisitoEmpty}" rendered="#{tipoRequisitoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{tipoRequisitoController.items.rowCount > 0}">
+                <h:panelGroup rendered="#{tipoRequisitoController.items.rowCount > 0}" binding="#{botoneslist}">
                     <h:outputText value="#{tipoRequisitoController.pagination.pageFirstItem + 1}..#{tipoRequisitoController.pagination.pageLastItem + 1}/#{tipoRequisitoController.pagination.itemsCount}"/>&nbsp;
                     <h:commandButton action="#{tipoRequisitoController.previous}" value="#{bundle.Previous} #{tipoRequisitoController.pagination.pageSize}" rendered="#{tipoRequisitoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandButton action="#{tipoRequisitoController.next}" value="#{bundle.Next} #{tipoRequisitoController.pagination.pageSize}" rendered="#{tipoRequisitoController.pagination.hasNextPage}"/>&nbsp;
@@ -40,14 +40,20 @@
                             <Componentes:botonesCrud value="botonesTR"/>
                         </h:column>
                     </h:dataTable>
-                        <h:panelGrid columns="2">
+                    <h:panelGrid columns="2" id="botoneslist">
                     <h:outputText value="#{bundle.ViewTipoRequisitoLabel_idTipoRequisito}"/>
                     <h:outputText value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.ViewTipoRequisitoTitle_idTipoRequisito}"/>
                     <h:outputText value="#{bundle.ViewTipoRequisitoLabel_nombretiporequisito}"/>
                     <h:outputText value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.ViewTipoRequisitoTitle_nombretiporequisito}"/>
-                </h:panelGrid>
+                        </h:panelGrid>
                 </h:panelGroup>
-            
+                  <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_idTipoRequisito}" for="idTipoRequisito" />
+                    <h:inputText id="idTipoRequisito" value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.EditTipoRequisitoTitle_idTipoRequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_idTipoRequisito}"/>
+                    <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_nombretiporequisito}" for="nombretiporequisito" />
+                    <h:inputText id="nombretiporequisito" value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.EditTipoRequisitoTitle_nombretiporequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_nombretiporequisito}"/>
+                </h:panelGrid>
+                     <h:commandButton action="#{tipoRequisitoController.update}" value="#{bundle.EditTipoRequisitoSaveLink}"/>
                 <br />
                 <h:commandButton action="#{tipoRequisitoController.prepareCreate}" value="#{bundle.ListTipoRequisitoCreateLink}"/>
                 <br />
