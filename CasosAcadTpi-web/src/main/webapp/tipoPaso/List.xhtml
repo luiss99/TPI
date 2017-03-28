@@ -41,6 +41,12 @@
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
+                 <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTipoRequisitoLabel_idTipoRequisito}"/>
+                    <h:outputText value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.ViewTipoRequisitoTitle_idTipoRequisito}"/>
+                    <h:outputText value="#{bundle.ViewTipoRequisitoLabel_nombretiporequisito}"/>
+                    <h:outputText value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.ViewTipoRequisitoTitle_nombretiporequisito}"/>
+                </h:panelGrid>
                 <br />
                 <h:commandLink action="#{tipoPasoController.prepareCreate}" value="#{bundle.ListTipoPasoCreateLink}"/>
                 <br />

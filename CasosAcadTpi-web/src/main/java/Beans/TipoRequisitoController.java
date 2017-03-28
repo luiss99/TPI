@@ -69,7 +69,7 @@ public class TipoRequisitoController implements Serializable {
     public String prepareView() {
         current = (TipoRequisito) getItems().getRowData();
         selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
-        return "View";
+        return "List";
     }
 
     public String prepareCreate() {
