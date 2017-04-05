@@ -16,9 +16,9 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_idTipoRequisito}" for="idTipoRequisito" />
-                    <h:inputText id="idTipoRequisito" value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.EditTipoRequisitoTitle_idTipoRequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_idTipoRequisito}"/>
+                    <h:inputText id="idTipoRequisito" value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.EditTipoRequisitoTitle_idTipoRequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_idTipoRequisito}" disabled="true"/>
                     <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_nombretiporequisito}" for="nombretiporequisito" />
-                    <h:inputText id="nombretiporequisito" value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.EditTipoRequisitoTitle_nombretiporequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_nombretiporequisito}"/>
+                    <h:inputText id="nombretiporequisito" value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.EditTipoRequisitoTitle_nombretiporequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_nombretiporequisito}" disabled="true"/>
                 </h:panelGrid>
                 <h:commandLink action="#{tipoRequisitoController.update}" value="#{bundle.EditTipoRequisitoSaveLink}"/>
                 <br />
@@ -26,21 +26,6 @@
                 <h:link outcome="View" value="#{bundle.EditTipoRequisitoViewLink}"/>
                 <br />
                 <h:commandLink action="#{tipoRequisitoController.prepareList}" value="#{bundle.EditTipoRequisitoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditTipoRequisitoIndexLink}" />
-            
-                 <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewTipoRequisitoLabel_idTipoRequisito}"/>
-                    <h:outputText value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.ViewTipoRequisitoTitle_idTipoRequisito}"/>
-                    <h:outputText value="#{bundle.ViewTipoRequisitoLabel_nombretiporequisito}"/>
-                    <h:outputText value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.ViewTipoRequisitoTitle_nombretiporequisito}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{tipoRequisitoController.destroyAndView}" value="#{bundle.ViewTipoRequisitoDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewTipoRequisitoEditLink}"/>
                 <br />
                 <h:commandLink action="#{tipoRequisitoController.prepareCreate}" value="#{bundle.ViewTipoRequisitoCreateLink}" />
                 <br />

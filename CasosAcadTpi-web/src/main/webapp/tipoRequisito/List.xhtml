@@ -46,6 +46,12 @@
                     <h:outputText value="#{bundle.ViewTipoRequisitoLabel_nombretiporequisito}"/>
                     <h:outputText value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.ViewTipoRequisitoTitle_nombretiporequisito}"/>
                 </h:panelGrid>
+                     <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_idTipoRequisito}" for="idTipoRequisito" />
+                    <h:inputText id="idTipoRequisito" value="#{tipoRequisitoController.selected.idTipoRequisito}" title="#{bundle.EditTipoRequisitoTitle_idTipoRequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_idTipoRequisito}" disabled="true"/>
+                    <h:outputLabel value="#{bundle.EditTipoRequisitoLabel_nombretiporequisito}" for="nombretiporequisito" />
+                    <h:inputText id="nombretiporequisito" value="#{tipoRequisitoController.selected.nombretiporequisito}" title="#{bundle.EditTipoRequisitoTitle_nombretiporequisito}" required="true" requiredMessage="#{bundle.EditTipoRequisitoRequiredMessage_nombretiporequisito}" disabled="true"/>
+                </h:panelGrid>
                 </h:panelGroup>
             
                 <br />
